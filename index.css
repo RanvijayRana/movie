@@ -10,22 +10,20 @@
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
-	justify-content: space-around;
-	align-items: center;
   overflow-y: scroll;
   overflow-x: none;
 }
 
-.modal {
-  margin: 10px;
+.titleBar{
 	height: 10vh;
-	box-sizing: border-box;
-	border: solid 5px yellow;
-	border-radius: 10px;
-	background-color: white;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+	border: solid;
+}
+.wiki{
+	border: solid;
+}
+.search{
+	height: 10vh;
+	border: solid;
 }
 
 @media screen and (min-width : 900px){
