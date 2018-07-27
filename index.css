@@ -15,15 +15,21 @@
 }
 
 .titleBar{
-	height: 10vh;
+	height: 9.5vh;
 	border: solid;
+	padding: 0;
 }
+
 .wiki{
+	height: 89vh;
 	border: solid;
+	padding: 0;
 }
 .search{
 	height: 10vh;
 	border: solid;
+	display: flex;
+	flex-direction: row;
 }
 
 @media screen and (min-width : 900px){
