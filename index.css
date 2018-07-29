@@ -21,6 +21,9 @@
 }
 
 .wiki{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
 	height: 89vh;
 	border: solid;
 	padding: 0;
@@ -30,6 +33,27 @@
 	border: solid;
 	display: flex;
 	flex-direction: row;
+}
+.content{
+	height: 78vh;
+	border: 2px solid blue;
+	display: none;
+	flex-direction: column;
+	overflow-x: none;
+	overflow-y: scroll;
+}
+.contentImg{
+	height: 78vh;
+	border: 2px solid red;
+	display: none;
+	flex-direction: row;
+}
+.image{
+	display: flex;
+	//width: 70%;
+	//height: 70%;
+	border: 2px solid blue;
+	border-radius: 10px;
 }
 
 @media screen and (min-width : 900px){
