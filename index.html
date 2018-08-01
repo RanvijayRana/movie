@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-		<title>Main Page Components</title>
+		<title>Movie directory</title>
 		<!-- CSS file -->
     <!--bootstrap CDN-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css"
@@ -36,32 +36,81 @@
 						<input class = "searchByYear" type="search" placeholder="Year" aria-label="Search">
 						<button class = "sub" type="submit">Search</button>
 				</div>
-				<div class = "content col-9">
-						<p id = "title">Title: -</p>
-						<p id = "year">Year: -</p>
-						<p id = "rated">Rated: -</p>
-						<p id = "released">Released: -</p>
-						<p id = "runtime">Runtime: -</p>
-						<p id = "genre">Genre: -</p>
-						<p id = "director">Director: -</p>
-						<p id = "writer">Writer: -</p>
-						<p id = "plot">Plot: -</p>
-						<p id = "language">Language: -</p>
-						<p id = "ratings">Ratings: -</p>
-						<p id = "metascore">Metascore: -</p>
-						<p id = "imdbrating">imdbRating: -</p>
-						<p id = "imdbvotes">imdbVotes: -</p>
-						<p id = "imdbid">imdbID: -</p>
-						<p id = "type">Type: -</p>
-						<p id = "dvd">DVD: -</p>
-						<p id = "boxoffice">BoxOffice: -</p>
-						<p id = "production">Production: -</p>
-						<p id ="website">Website: -</p>
-						<p id = "respose">Response: -</p>
-				</div>
 				<div class = "contentImg col-3">
 						<div class = "image"></div>
 				</div>
+				<div class = "content col-4">
+						<p id = "title">Title: -</p>
+						<p id = "year">Year: -</p>
+						<p id = "type">Type: -</p>
+						<p id = "rated">Rated: -</p>
+						<p id = "released">Released: -</p>
+						<p id = "dvd">DVD: -</p>
+
+				</div>
+				<div class = "contentBar col-5">
+					<div class="accordion" id="accordionExample">
+					<div class="card">
+						<div class="card-header" id="headingOne">
+							<h5 class="mb-0">
+								<button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+									Casting
+								</button>
+							</h5>
+						</div>
+
+						<div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+							<div class="card-body">
+								<p id = "director">Director: -</p>
+								<p id = "writer">Writer: -</p>
+								<p id = "actor">Actors: -</p>
+								<p id = "runtime">Runtime: -</p>
+								<p id = "genre">Genre: -</p>
+								<p id = "language">Language: -</p>
+							</div>
+						</div>
+					</div>
+					<div class="card">
+						<div class="card-header" id="headingTwo">
+							<h5 class="mb-0">
+								<button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+									Ratings
+								</button>
+							</h5>
+						</div>
+						<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+							<div class="card-body">
+								<p id = "ratings">Ratings: -</p>
+								<p id = "metascore">Metascore: -</p>
+								<p id = "imdbrating">imdbRating: -</p>
+								<p id = "imdbvotes">imdbVotes: -</p>
+								<p id = "imdbid">imdbID: -</p>
+							</div>
+						</div>
+					</div>
+					<div class="card">
+						<div class="card-header" id="headingThree">
+							<h5 class="mb-0">
+								<button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+									More
+								</button>
+							</h5>
+						</div>
+						<div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+							<div class="card-body">
+								<p id = "plot">Plot: -</p>
+								<p id = "boxoffice">BoxOffice: -</p>
+								<p id = "production">Production: -</p>
+								<p id = "website">Website: -</p>
+								<p id = "country">Country: -</p>
+								<p id = "award">Awards: -</p>
+							</div>
+						</div>
+					</div>
+					</div>
+
+				</div>
+
 			</div>
 
 		</div>
