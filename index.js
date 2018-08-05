@@ -54,19 +54,32 @@ let searchMovie = (movieId,movieTitle,movieYear) => {
 						$(".image").css("display","flex");
 						$(".content").css("display","flex");
 						$(".contentBar").css("display","flex");
-						$("#title").append(response.Title);
-						$("#year").append(response.Year);
-						$("#rated").append(response.Rated);
-						$("#released").append(response.Released);
-						$("#runtime").append(response.Runtime);
-						$("#genre").append(response.Genre);
-						$("#director").append(response.Director);
-						$("#writer").append(response.Writer);
-						$("#actor").append(response.Actors);
-						$("#plot").append(response.Plot);
-						$("#language").append(response.Language);
-						$("#country").append(response.Country);
-						$("#award").append(response.Awards);
+						$("#titleValue").empty();
+						$("#yearValue").empty();
+						$("#ratedValue").empty();
+						$("#releasedValue").empty();
+						$("#runtimeValue").empty();
+						$("#genreValue").empty();
+						$("#directorValue").empty();
+						$("#writerValue").empty();
+						$("#actorValue").empty();
+						$("#plotValue").empty();
+						$("#languageValue").empty();
+						$("#countryValue").empty();
+						$("#awardValue").empty();
+						$("#titleValue").append(response.Title);
+						$("#yearValue").append(response.Year);
+						$("#ratedValue").append(response.Rated);
+						$("#releasedValue").append(response.Released);
+						$("#runtimeValue").append(response.Runtime);
+						$("#genreValue").append(response.Genre);
+						$("#directorValue").append(response.Director);
+						$("#writerValue").append(response.Writer);
+						$("#actorValue").append(response.Actors);
+						$("#plotValue").append(response.Plot);
+						$("#languageValue").append(response.Language);
+						$("#countryValue").append(response.Country);
+						$("#awardValue").append(response.Awards);
 					let ratingReport = ``;
 						for(value in response.Ratings){
 							if(value == 0){
@@ -76,17 +89,28 @@ let searchMovie = (movieId,movieTitle,movieYear) => {
 									ratingReport = `${ratingReport}, ${response.Ratings[value].Source} (${response.Ratings[value].Value})`;
 							}
 						}
-						$("#ratings").append(ratingReport);
-						$("#metascore").append(response.Metascore);
-						$("#imdbrating").append(response.imdbRating);
-						$("#imdbvotes").append(response.imdbVotes);
-						$("#imdbid").append(response.imdbID);
-						$("#type").append(response.Type);
-						$("#dvd").append(response.DVD);
-						$("#boxoffice").append(response.BoxOffice);
-						$("#production").append(response.Production);
-						$("#website").append(response.Website);
-						$("#respose").append(response.Response);
+						$("#ratingsValue").empty();
+						$("#metascoreValue").empty();
+						$("#imdbratingValue").empty();
+						$("#imdbvotesValue").empty();
+						$("#imdbidValue").empty();
+						$("#typeValue").empty();
+						$("#dvdValue").empty();
+						$("#boxofficeValue").empty();
+						$("#productionValue").empty();
+						$("#websiteValue").empty();
+						$("#resposeValue").empty();
+						$("#ratingsValue").append(ratingReport);
+						$("#metascoreValue").append(response.Metascore);
+						$("#imdbratingValue").append(response.imdbRating);
+						$("#imdbvotesValue").append(response.imdbVotes);
+						$("#imdbidValue").append(response.imdbID);
+						$("#typeValue").append(response.Type);
+						$("#dvdValue").append(response.DVD);
+						$("#boxofficeValue").append(response.BoxOffice);
+						$("#productionValue").append(response.Production);
+						$("#websiteValue").append(response.Website);
+						$("#resposeValue").append(response.Response);
 						if(response.Poster == "N/A"){
 								$(".image").html('<img src="smiley.jpg" alt="Smiley face" class ="img-fluid rounded">')
 						}
@@ -103,7 +127,7 @@ let searchMovie = (movieId,movieTitle,movieYear) => {
 				}
 
 			},
-			timeout: 6000,
+			timeout: 10000,
 			error: (err)=>
         {
  					console.log(err);
