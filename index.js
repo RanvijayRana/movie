@@ -1,29 +1,57 @@
 $(document).ready(() => {
 		$(".sub").click(() => {
-
 			retreive();
 		});
+		$(".progress").progress();
 
 
 });
+
 
 let retreive = () => {
 	let movieId = $(".searchById").val();
 	let movieTitle = $(".searchByTitle").val();
 	let movieYear = $(".searchByYear").val();
 
-	if(movieYear != "" && movieTitle == ""){
+	if(movieYear == "" && movieTitle == "" && movieId == ""){
+		alert("search on null field");
+		searchMovie(movieId,movieTitle,movieYear);
+	}
+	else if(movieYear != "" && movieTitle != "" && movieId != ""){
+		alert("year, id and title");
+	}
+	else if(movieYear != "" && movieTitle != ""){
+		alert("year and title");
+		searchMovie(movieId,movieTitle,movieYear);
+	}
+	else if(movieYear != "" && movieTitle == ""){
 		alert("please provide a movie name")
 	}
+	else if(movieYear != "" && movieId != ""){
+		alert("year and id");
+	}
+	else if( movieTitle != "" && movieId != ""){
+		alert("id and title");
+		searchMovie(movieId,movieTitle,movieYear);
+	}
 	else{
+		alert(`id: ${movieId}  title: ${movieTitle}  year:  ${movieYear}`)
+		searchMovie(movieId,movieTitle,movieYear);
+	}
+
+}
+
+let searchMovie = (movieId,movieTitle,movieYear) => {
+
 		$.ajax({
 			type: 'GET',
 			dataType: 'json',
 			async: true,
 			url: 'https://www.omdbapi.com/?i='+movieId+'&t='+movieTitle+'&y='+movieYear+'&apikey=bfabb086',
 			success: (response) => {
-				if((response.Response == "True") || (response.Title == movTitle) || (response.Year == movYear)){
+				if(response.Response == "True"){
 						$(".contentImg").css("display","flex");
+						$(".image").css("display","flex");
 						$(".content").css("display","flex");
 						$(".contentBar").css("display","flex");
 						$("#title").append(response.Title);
@@ -68,13 +96,28 @@ let retreive = () => {
 				}
 				else{
 					$(".contentImg").css("display","none");
+					$(".image").css("display","none");
 					$(".content").css("display","none");
 					$(".contentBar").css("display","none");
 					alert("movie id not present in directory");
 				}
 
-			}
+			},
+			timeout: 6000,
+			error: (err)=>
+        {
+ 					console.log(err);
+        	alert("timeout");
+
+        },
+       beforeSend: ()=>
+       {
+      //  $("#ldr").removeClass('vision')
+       },
+       complete:()=>
+       {
+        // $("#ldr").addClass('vision')
+       }
 		}); //end of ajax call
-	}
 
 }

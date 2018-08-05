@@ -10,9 +10,12 @@
 		Steve Englehart (Star-Lord created by), Steve Gan (Star-Lord created by), Jim Starlin (Gamora and Drax created by),
 		Stan Lee (Groot created by), Larry Lieber (Groot created by), Jack Kirby (Groot created by),
 		Bill Mantlo (Rocket Raccoon created by), Keith Giffen (Rocket Raccoon created by), Steve Gerber (Howard the Duck created by),
-		Val Mayerik (Howard the Duck created by)","Actors":"Chris Pratt, Zoe Saldana, Dave Bautista, Vin Diesel",
+		Val Mayerik (Howard the Duck created by)",
+	"Actors":"Chris Pratt, Zoe Saldana, Dave Bautista, Vin Diesel",
 	"Plot":"The Guardians must fight to keep their newfound family together as they unravel the mystery of Peter Quill's true parentage.",
-	"Language":"English","Country":"USA","Awards":"Nominated for 1 Oscar. Another 12 wins & 42 nominations.",
+	"Language":"English",
+	"Country":"USA",
+	"Awards":"Nominated for 1 Oscar. Another 12 wins & 42 nominations.",
 	"Poster":"https://m.media-amazon.com/images/M/MV5BMTg2MzI1MTg3OF5BMl5BanBnXkFtZTgwNTU3NDA2MTI@._V1_SX300.jpg",
 	"Ratings":[{"Source":"Internet Movie Database","Value":"7.7/10"},
 			{"Source":"Rotten Tomatoes","Value":"83%"},
@@ -27,4 +30,44 @@
 	"Production":"Walt Disney Pictures",
 	"Website":"https://marvel.com/guardians",
 	"Response":"True"
+}
+
+.result{
+	display: flex;
+
+	border: 5px solid white;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: flex-start;
+	padding: 0;
+}
+.content{
+	height: 5vh;
+	border: 5px solid blue;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.contentBar{
+	height: 5vh;
+	border: 2px solid blue;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	overflow-x: none;
+	overflow-y: none;
+}
+.contentImg{
+	margin: 0;
+	height: 100%;
+	border: 5px solid red;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}
+.image{
+	width: 95%;
+	height: 1vh;
 }

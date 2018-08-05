@@ -16,27 +16,92 @@
 
 .titleBar{
 	height: 9.5vh;
-	border: solid;
 	padding: 0;
 }
-
 .wiki{
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
 	height: 89vh;
-	border: solid;
 	padding: 0;
 }
 .search{
 	height: 10vh;
-	border: solid;
 	display: flex;
 	flex-direction: row;
+	align-items: center;
+	border: 2px solid white;
+	border-radius: 10px;
+}
+.searchById{
+	border-radius: 10px;
+	height: 90%;
+	width: 65%;
+}
+.id{
+	height: 6vh;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+}
+.searchByTitle{
+	border-radius: 10px;
+	height: 90%;
+	width: 65%;
+}
+.title{
+	height: 6vh;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+}
+.searchByYear{
+	border-radius: 10px;
+	height: 90%;
+	width: 65%;
+}
+.year{
+	height: 6vh;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+}
+.sub{
+	height: 5vh;
+	width: 10vw;
+	border-radius: 5px;
+	margin-left: 1vw;
+	margin-right: 1vw;
+}
+.progress{
+	width: 18vw;
+	height: 30%;
+	border-radius: 4px;
+}
+.subProg{
+	height: 6vh;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+}
+.contentImg{
+	height: 78vh;
+	display: none;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}
+.image{
+	display: none;
+	width: 70%;
+	height: 70%;
 }
 .content{
 	height: 78vh;
-	border: 2px solid blue;
 	display: none;
 	flex-direction: column;
 	justify-content: center;
@@ -44,28 +109,13 @@
 }
 .contentBar{
 	height: 78vh;
-	border: 2px solid blue;
 	display: none;
 	flex-direction: column;
 	justify-content: center;
-	//align-items: center;
 	overflow-x: none;
 	overflow-y: scroll;
 }
-.contentImg{
-	height: 78vh;
-	border: 2px solid red;
-	display: none;
-	flex-direction: row;
-	justify-content: center;
-	align-items: center;
-}
-.image{
-	display: flex;
-	width: 70%;
-	height: 70%;
-	border: 2px solid blue;
-}
+
 
 @media screen and (min-width : 900px){
 
@@ -73,4 +123,49 @@
 
 @media screen and (max-width : 899px){
 
+	.search{
+		height: 25vh;
+		flex-direction: column;
+	}
+	.id{
+		width: 100%;
+		justify-content: space-between;
+	}
+	.title{
+		width: 100%;
+		justify-content: space-between;
+	}
+	.year{
+		width: 100%;
+		justify-content: space-between;
+	}
+	.subProg{
+		width: 100%;
+		justify-content: space-between;
+	}
+	.sub{
+		height: 100%;
+		width: 30vw;
+	}
+	.progress{
+		width: 61vw;
+		height: 50%;
+	}
+	.wiki{
+		overflow-y: scroll;
+	}
+.contentImg{
+		height: 63vh;
+	}
+	.image{
+		width: 95%;
+		height: 95%;
+	}
+	.content{
+		height: auto;
+	}
+	.contentBar{
+		height: auto;
+		overflow-y: hidden;
+	}
 }
