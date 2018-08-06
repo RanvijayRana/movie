@@ -104,10 +104,10 @@ let searchMovie = (movieId,movieTitle,movieYear) => {
 						$("#websiteValue").append(response.Website);
 						$("#resposeValue").append(response.Response);
 						if(response.Poster == "N/A"){
-								$(".image").html('<img src="smiley.jpg" alt="Smiley face" class ="img-fluid rounded">')
+								$(".image").html('<img src="smiley.jpg" alt="Smiley face" class ="responsive">')
 						}
 						else{
-								$(".image").html('<img src="' + response.Poster + '" alt="Smiley face" class ="img-fluid rounded">')
+								$(".image").html('<img src="' + response.Poster + '" alt="Smiley face" class ="responsive">')
 						}
 				}
 				else{
