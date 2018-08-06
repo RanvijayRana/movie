@@ -1,14 +1,19 @@
 $(document).ready(() => {
 		$(".subAdv").click(() => {
-			$(".id").css("display","flex");
-			$(".year").css("display","flex");
+			if($(".id").css("display") == "none"){
+				$(".id").css("display","flex");
+				$(".year").css("display","flex");
+			}
+			else{
+				$(".id").css("display","none");
+				$(".year").css("display","none");
+			}
 		});
+
 		$(".sub").click(() => {
 			retreive();
 		});
 		$(".progress").progress();
-
-
 });
 
 

@@ -103,7 +103,6 @@
 	flex-direction: row;
 	justify-content: center;
 	align-items: center;
-	border: 2px solid white;
 }
 .image{
 	display: none;
@@ -111,7 +110,6 @@
 	align-items: center;
 	width: 90%;
 	height: 90%;
-	border: 2px solid blue;
 }
 .content{
 	height: 78vh;
@@ -119,7 +117,6 @@
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	border: 2px solid black;
 }
 .textSize{
 	font-weight: bold;
@@ -136,7 +133,6 @@
 	justify-content: center;
 	overflow-x: none;
 	overflow-y: scroll;
-	border: 2px solid red;
 }
 .loader {
 		position: absolute;
@@ -170,31 +166,20 @@
 		height: 25vh;
 		flex-direction: column;
 	}
-	.searchById{
-		font-size: 1.8rem;
-	}
 	.id{
-		font-size: 1.8rem;
 		width: 100%;
 		justify-content: space-between;
-	}
-	.searchByTitle{
-		font-size: 1.8rem;
 	}
 	.title{
-		font-size: 1.8rem;
 		width: 100%;
 		justify-content: space-between;
 	}
-	.searchByYear{
-		font-size: 1.8rem;
-	}
 	.year{
-		font-size: 1.8rem;
 		width: 100%;
 		justify-content: space-between;
 	}
 	.subProg{
+		font-size: 1.8rem;
 		width: 100%;
 		justify-content: space-between;
 	}
@@ -206,25 +191,14 @@
 	.subAdv{
 		font-size: 1.8rem;
 		height: 100%;
-		width: 60vw;
+		width: 61vw;
 	}
 	.progress{
-		font-size: 1.8rem;
-	}
-	.subProg{
 		font-size: 1.8rem;
 	}
 	.contentImg{
 		height: 65vh;
 		font-size: 1.8rem;
-	}
-	.image{
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		width: 90%;
-		height: 90%;
-		border: 2px solid blue;
 	}
 	.content{
 		height: auto;
@@ -247,6 +221,15 @@
 			font-size: 1.8rem;
 	}
 	.moreClass{
+			font-size: 1.8rem;
+	}
+	.modal-title{
+			font-size: 1.8rem;
+	}
+	.modal-body{
+			font-size: 1.8rem;
+	}
+	.modal-footer{
 			font-size: 1.8rem;
 	}
 
@@ -291,10 +274,6 @@
 	}
 	.contentImg{
 		height: 63vh;
-	}
-	.image{
-		width: 90%;
-		height: 90%;
 	}
 	.content{
 		height: auto;
