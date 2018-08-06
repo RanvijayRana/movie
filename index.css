@@ -41,7 +41,7 @@
 .id{
 	height: 6vh;
 	width: 100%;
-	display: flex;
+	display: none;
 	align-items: center;
 	justify-content: flex-start;
 }
@@ -65,13 +65,20 @@
 .year{
 	height: 6vh;
 	width: 100%;
-	display: flex;
+	display: none;
 	align-items: center;
 	justify-content: flex-start;
 }
 .sub{
 	height: 5vh;
 	width: 10vw;
+	border-radius: 5px;
+	margin-left: 1vw;
+	margin-right: 1vw;
+}
+.subAdv{
+	height: 5vh;
+	width: 20vw;
 	border-radius: 5px;
 	margin-left: 1vw;
 	margin-right: 1vw;
@@ -123,6 +130,21 @@
 	overflow-x: none;
 	overflow-y: scroll;
 }
+.loader {
+		display: none;
+		justify-content: center;
+    border: 10px solid #f3f3f3; /* Light grey */
+    border-top: 10px solid #66b9bf; /* Blue */
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    animation: spin 10s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
 
 
 @media screen and (min-width : 900px){
@@ -154,6 +176,10 @@
 	.sub{
 		height: 100%;
 		width: 30vw;
+	}
+	.subAdv{
+		height: 100%;
+		width: 60vw;
 	}
 	.progress{
 		width: 61vw;

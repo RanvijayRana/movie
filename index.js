@@ -1,4 +1,8 @@
 $(document).ready(() => {
+		$(".subAdv").click(() => {
+			$(".id").css("display","flex");
+			$(".year").css("display","flex");
+		});
 		$(".sub").click(() => {
 			retreive();
 		});
@@ -15,27 +19,11 @@ let retreive = () => {
 
 	if(movieYear == "" && movieTitle == "" && movieId == ""){
 		alert("search on null field");
-		searchMovie(movieId,movieTitle,movieYear);
-	}
-	else if(movieYear != "" && movieTitle != "" && movieId != ""){
-		alert("year, id and title");
-	}
-	else if(movieYear != "" && movieTitle != ""){
-		alert("year and title");
-		searchMovie(movieId,movieTitle,movieYear);
 	}
 	else if(movieYear != "" && movieTitle == ""){
 		alert("please provide a movie name")
 	}
-	else if(movieYear != "" && movieId != ""){
-		alert("year and id");
-	}
-	else if( movieTitle != "" && movieId != ""){
-		alert("id and title");
-		searchMovie(movieId,movieTitle,movieYear);
-	}
 	else{
-		alert(`id: ${movieId}  title: ${movieTitle}  year:  ${movieYear}`)
 		searchMovie(movieId,movieTitle,movieYear);
 	}
 
@@ -123,7 +111,21 @@ let searchMovie = (movieId,movieTitle,movieYear) => {
 					$(".image").css("display","none");
 					$(".content").css("display","none");
 					$(".contentBar").css("display","none");
-					alert("movie id not present in directory");
+					if(movieYear != "" && movieTitle != "" && movieId != ""){
+						alert(`Movie with combination of ${movieId}, ${movieTitle} and ${movieYear} not found`);
+					}
+					else if(movieYear != "" && movieTitle != ""){
+						alert(`Movie with combination of ${movieTitle} and ${movieYear} not found`);
+					}
+					else if( movieTitle != "" && movieId != ""){
+						alert(`Movie with combination of ${movieId} and ${movieTitle} not found`);
+					}
+					else if( movieTitle != "" && movieId == ""){
+						alert(`Movie with ${movieTitle} not found`);
+					}
+					else if( movieTitle == "" && movieId != ""){
+						alert(`Movie with ${movieId} not found`);
+					}
 				}
 
 			},
@@ -136,11 +138,11 @@ let searchMovie = (movieId,movieTitle,movieYear) => {
         },
        beforeSend: ()=>
        {
-      //  $("#ldr").removeClass('vision')
+				 $(".loader").css("display","flex");
        },
        complete:()=>
        {
-        // $("#ldr").addClass('vision')
+				  $(".loader").css("display","none");
        }
 		}); //end of ajax call
 
