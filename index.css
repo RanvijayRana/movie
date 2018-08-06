@@ -3,7 +3,7 @@
 }
 
 .screenSize {
-	background-image: url("bck1.jpg");
+	background-image: url("def.png");
 	height: 100vh;
 	box-sizing: border-box;
 	border: solid 5px blue;
@@ -115,12 +115,18 @@
 	align-items: center;
 }
 .textSize{
-	font-size: 20px;
-	text-decoration: bold;
+	font-weight: bold;
 }
 .textValue{
-	font-size: 30px;
-	text-decoration-color: white;
+	font-size: 18px;
+	font-family: italic;
+	font-weight: bold;
+	color: white;
+}
+.textLook{
+	font-family: cursive;
+	font-weight: normal;
+	color: #0000FF;
 }
 .contentBar{
 	height: 78vh;

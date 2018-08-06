@@ -146,8 +146,9 @@ let searchMovie = (movieId,movieTitle,movieYear) => {
 			timeout: 10000,
 			error: (err)=>
         {
- 					console.log(err);
-        	alert("timeout");
+						$(".modal-body").empty();
+						$(".modal-body").append(`Timeout - you may be on slow Internet connection`);
+						$('.modal').modal('show');
 
         },
        beforeSend: ()=>
