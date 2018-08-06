@@ -18,10 +18,14 @@ let retreive = () => {
 	let movieYear = $(".searchByYear").val();
 
 	if(movieYear == "" && movieTitle == "" && movieId == ""){
-		alert("search on null field");
+			$(".modal-body").empty();
+			$(".modal-body").append(`Please provide Movie Name`);
+			$('.modal').modal('show');
 	}
 	else if(movieYear != "" && movieTitle == ""){
-		alert("please provide a movie name")
+			$(".modal-body").empty();
+			$(".modal-body").append(`Please provide Movie Name`);
+			$('.modal').modal('show');
 	}
 	else{
 		searchMovie(movieId,movieTitle,movieYear);
@@ -112,19 +116,29 @@ let searchMovie = (movieId,movieTitle,movieYear) => {
 					$(".content").css("display","none");
 					$(".contentBar").css("display","none");
 					if(movieYear != "" && movieTitle != "" && movieId != ""){
-						alert(`Movie with combination of ${movieId}, ${movieTitle} and ${movieYear} not found`);
+							$(".modal-body").empty();
+							$(".modal-body").append(`Movie with combination of Movie Id : "${movieId}", Movie Title : "${movieTitle}" and Movie Year "${movieYear}" not found`);
+							$('.modal').modal('show');
 					}
 					else if(movieYear != "" && movieTitle != ""){
-						alert(`Movie with combination of ${movieTitle} and ${movieYear} not found`);
+							$(".modal-body").empty();
+							$(".modal-body").append(`Movie with combination of Movie Title : "${movieTitle}" and Movie Year "${movieYear}" not found`);
+							$('.modal').modal('show');
 					}
 					else if( movieTitle != "" && movieId != ""){
-						alert(`Movie with combination of ${movieId} and ${movieTitle} not found`);
+						$(".modal-body").empty();
+						$(".modal-body").append(`Movie with combination of Movie Id : "${movieId}" and Movie Title "${movieTitle}" not found`);
+						$('.modal').modal('show');
 					}
 					else if( movieTitle != "" && movieId == ""){
-						alert(`Movie with ${movieTitle} not found`);
+						$(".modal-body").empty();
+						$(".modal-body").append(`Movie with Movie Title: - "${movieTitle}" not found`);
+						$('.modal').modal('show');
 					}
 					else if( movieTitle == "" && movieId != ""){
-						alert(`Movie with ${movieId} not found`);
+						$(".modal-body").empty();
+						$(".modal-body").append(`Movie with Movie Id : "${movieId}" not found`);
+						$('.modal').modal('show');
 					}
 				}
 
