@@ -55,7 +55,7 @@ let retreive = () => {
 	}
 	else if(movieYear != "" && movieTitle == ""){
 			$(".modal-body").empty();
-			$(".modal-body").append(`Please provide Movie Name`);
+			$(".modal-body").append(`Please provide Movie Name or remove the Year value`);
 			$('.modal').modal('show');
 	}
 	else{
@@ -65,12 +65,21 @@ let retreive = () => {
 }
 
 let searchMovie = (movieId,movieTitle,movieYear) => {
-
+		let urlAddress = "";
+		if(movieId != ""){
+				urlAddress = 'https://www.omdbapi.com/?i='+movieId+'&apikey=bfabb086';
+		}
+		else if(movieTitle != "" && movieYear == "" ){
+				urlAddress = 'https://www.omdbapi.com/?t='+movieTitle+'&apikey=bfabb086';
+		}
+		else if(movieTitle != "" && movieYear != ""){
+				urlAddress = 'https://www.omdbapi.com/?t='+movieTitle+'&y='+movieYear+'&apikey=bfabb086';
+		}
 		$.ajax({
 			type: 'GET',
 			dataType: 'json',
 			async: true,
-			url: 'https://www.omdbapi.com/?i='+movieId+'&t='+movieTitle+'&y='+movieYear+'&apikey=bfabb086',
+			url: urlAddress,
 			success: (response) => {
 				if(response.Response == "True"){
 						$(".contentImg").css("display","flex");
@@ -146,30 +155,21 @@ let searchMovie = (movieId,movieTitle,movieYear) => {
 					$(".image").css("display","none");
 					$(".content").css("display","none");
 					$(".contentBar").css("display","none");
-					if(movieYear != "" && movieTitle != "" && movieId != ""){
-							$(".modal-body").empty();
-							$(".modal-body").append(`Movie with combination of Movie Id : "${movieId}", Movie Title : "${movieTitle}" and Movie Year "${movieYear}" not found`);
-							$('.modal').modal('show');
-					}
-					else if(movieYear != "" && movieTitle != ""){
-							$(".modal-body").empty();
-							$(".modal-body").append(`Movie with combination of Movie Title : "${movieTitle}" and Movie Year "${movieYear}" not found`);
-							$('.modal').modal('show');
-					}
-					else if( movieTitle != "" && movieId != ""){
+
+					if(movieId != ""){
 						$(".modal-body").empty();
-						$(".modal-body").append(`Movie with combination of Movie Id : "${movieId}" and Movie Title "${movieTitle}" not found`);
+						$(".modal-body").append(`Movie with Movie Id : "${movieId}" not found`);
 						$('.modal').modal('show');
 					}
-					else if( movieTitle != "" && movieId == ""){
+					else if(movieTitle != "" && movieYear == "" ){
 						$(".modal-body").empty();
 						$(".modal-body").append(`Movie with Movie Title: - "${movieTitle}" not found`);
 						$('.modal').modal('show');
 					}
-					else if( movieTitle == "" && movieId != ""){
-						$(".modal-body").empty();
-						$(".modal-body").append(`Movie with Movie Id : "${movieId}" not found`);
-						$('.modal').modal('show');
+					else if(movieTitle != "" && movieYear != ""){
+							$(".modal-body").empty();
+							$(".modal-body").append(`Movie with combination of Movie Title : "${movieTitle}" and Movie Year "${movieYear}" not found`);
+							$('.modal').modal('show');
 					}
 				}
 
