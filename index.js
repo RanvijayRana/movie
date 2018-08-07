@@ -1,18 +1,45 @@
 $(document).ready(() => {
-		$(".subAdv").click(() => {
-			if($(".id").css("display") == "none"){
+	$(".searchById").focusin(() =>{
+		 $(".searchByTitle").attr("disabled", "disabled");
+		 $(".searchByYear").attr("disabled", "disabled");
+		 $(".searchByTitle").val() = "";
+		 $(".searchByYear").val() = "";
+	});
+	$(".searchById").focusout(() =>{
+		if($(".searchById").val() == ""){
+				$(".searchByTitle").removeAttr("disabled");
+				$(".searchByYear").removeAttr("disabled");
+		}
+	});
+
+	$(".searchByTitle").focusin(() =>{
+		 $(".searchById").attr("disabled", "disabled");
+		 $(".searchById").val() = "";
+		 if($(".searchByTitle").val() == ""){
+			 	$(".searchById").removeAttr("disabled");
+		 }
+	});
+	$(".searchByTitle").focusout(() =>{
+		 if($(".searchByTitle").val() == ""){
+			 	$(".searchById").removeAttr("disabled");
+		 }
+	});
+
+
+	$(".subAdv").click(() => {
+		if($(".id").css("display") == "none"){
 				$(".id").css("display","flex");
 				$(".year").css("display","flex");
-			}
-			else{
+		}
+		else{
 				$(".id").css("display","none");
 				$(".year").css("display","none");
-			}
-		});
+		}
+	});
 
-		$(".sub").click(() => {
+	$(".sub").click(() => {
 			retreive();
-		});
+	});
 });
 
 
