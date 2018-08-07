@@ -13,7 +13,6 @@ $(document).ready(() => {
 		$(".sub").click(() => {
 			retreive();
 		});
-		$(".progress").progress();
 });
 
 
